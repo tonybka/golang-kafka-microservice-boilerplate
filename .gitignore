@@ -1,0 +1,34 @@
+# Git Ignore file
+.idea
+.vscode
+
+# mac
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+
+# Config file
+.env
+config.toml
+config.json
+
+# Ignore temporary folder
+/tmp
+/log
+
+# godepgraph visual graph image
+godepgraph.png
