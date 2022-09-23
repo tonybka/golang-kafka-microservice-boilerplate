@@ -5,13 +5,14 @@ The GoLang boilerplate that implements best practices for great foundation of ev
 
 ## Features
 - [x] **Run & Manage via CLI Command**: Provides options to interact with golang application
-- [ ] Makefile
-- [ ] Live Reload
+- [x] Makefile
+- [x] Live Reload
+- [ ] Dependency Injection
 - [ ] Configuration
 - [ ] Health Check
 - [ ] Database Migration
 - [ ] Linter
-- [ ] Docker & Docker Compose
+- [x] Docker & Docker Compose
 - [ ] Logging
 - [ ] Metrics Observability
 - [ ] Unit Test
@@ -31,7 +32,16 @@ In many cases, service needs to handle real-time synchronous requests from clien
 ![Request-Reply Pattern](./assets/RequestReplyPatternFigure.gif)
 
 
+### Dependency Injection
+#### Definition
+- https://en.wikipedia.org/wiki/Dependency_injection
+
+#### Advantages
+The most obvious advantage of applying Dependency Injection pattern is decreased coupling between classes (structs) with
+their dependencies, your service will become testable with mocks, and easier to achieve high testing coverage
+
 ## Highlighted Dependencies
 - Build CLI with Cobra: [github.com/spf13/cobra](github.com/spf13/cobra)
+- Wire (Google): [https://github.com/google/wire](https://github.com/google/wire)
 ## References
 - [Enterprise Integration Patterns: Request-Reply](https://www.enterpriseintegrationpatterns.com/RequestReply.html)
