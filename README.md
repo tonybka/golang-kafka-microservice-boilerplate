@@ -4,7 +4,19 @@
 The GoLang boilerplate that implements best practices for great foundation of event-sourcing Microservice with Kafka
 
 ## Features
-- [x] **Command Line Options (CLI)**: Provides options to interact with golang application
+- [x] **Run & Manage via CLI Command**: Provides options to interact with golang application
+- [ ] Makefile
+- [ ] Live Reload
+- [ ] Configuration
+- [ ] Health Check
+- [ ] Database Migration
+- [ ] Linter
+- [ ] Docker & Docker Compose
+- [ ] Logging
+- [ ] Metrics Observability
+- [ ] Unit Test
+- [ ] End-to-End Test Sample
+
 
 ## Design Patterns & Principles
 ### Clean Architecture
