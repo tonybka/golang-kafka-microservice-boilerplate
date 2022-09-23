@@ -24,6 +24,28 @@ The GoLang boilerplate that implements best practices for great foundation of ev
 <img src="assets/CleanArchitectureFigure.png" width="350" height="270" />
 
 Decouples Golang web service to independent layers, the changes from one layer won't affect codes of the others.
+
+- Application Layer
+  - Controllers, Handlers
+  - Command
+  - Query
+  - DTO (Mappers, Presenters)
+  - Notifications
+- Domain Layer
+  - Entity, Aggregate
+  - Value Object
+  - Domain Event
+- Infrastructure Layer (includes Persistence)
+  - DB Models
+  - Repository
+  - Logging
+
+#### Sample of Layered Architect
+A sample of clean architect for account bounded context, you can access to these codes with following path
+``` <root>/internal/account-sample ```. This is just for demonstration.
+
+<img src="assets/AccountLayeredArchitectSample.png" width="240" height="450" />
+
 ### Messaging Patterns
 
 #### Implement the Request-Reply pattern
