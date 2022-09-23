@@ -6,10 +6,18 @@ import (
 	"os"
 )
 
+var configFile string
+
 // init will be called whenever a package initialize in golang
 func init() {
 	cobra.OnInitialize(initConfig)
-	// Developer is going to define flags and configuration settings here
+	// Developers are going to define flags and configuration settings here
+	RootCmd.PersistentFlags().StringVar(
+		&configFile,
+		"config",
+		"",
+		"Absolute path to configuration file (default at $HOME directory)",
+	)
 }
 
 // RootCmd represent for the base command if it called without any subcommand

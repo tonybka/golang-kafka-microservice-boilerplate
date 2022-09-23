@@ -1,4 +1,4 @@
-package golang_kafka_microservice_boilerplate
+package main
 
 import "github.com/tonybka/golang-kafka-microservice-boilerplate/cmd"
 
