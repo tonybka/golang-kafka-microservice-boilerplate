@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  boilerplate:
+    container_name: boilerplate_container
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    restart: always
+    env_file: .env
+    logging:
+      options:
+        max-size: 10m
