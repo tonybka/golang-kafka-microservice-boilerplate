@@ -18,6 +18,8 @@ RUN apk add --no-cache git --update py-pip \
 
 RUN go mod download
 
+RUN go get github.com/google/wire/cmd/wire
+
 # Install air for Live Reload on Development environment
 RUN wget -O install.sh https://raw.githubusercontent.com/cosmtrek/air/master/install.sh
 RUN chmod +x install.sh
