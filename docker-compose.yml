@@ -6,7 +6,37 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     restart: always
-    env_file: .env
+    depends_on:
+      - kafka-cluster
+    env_file: .env # NOTICE: please do not forget to create an .env file
     logging:
       options:
         max-size: 10m
+
+  kafka-zookeeper:
+    container_name: kafka_zookeeper
+    restart: always
+    image: zookeeper
+    ports:
+      - '30001:2181'
+
+  kafka-cluster:
+    container_name: kafka_cluster
+    restart: always
+    build: ../kafka-docker # https://github.com/tonybka/kafka-docker
+    ports:
+      - '30002:9092'
+    expose:
+      - '9093'
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka-cluster:9093,OUTSIDE://kafka-cluster:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: kafka-zookeeper:2181
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    depends_on:
+      - kafka-zookeeper
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
